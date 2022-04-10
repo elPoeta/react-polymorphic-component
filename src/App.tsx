@@ -13,6 +13,10 @@ function App() {
         This is a p tag
       </Text>
 
+      <Text as="a" href="https://www.google.com">
+        This is an anchor tag
+      </Text>
+      <br />
       <Text >
         This is a default span tag
       </Text>
