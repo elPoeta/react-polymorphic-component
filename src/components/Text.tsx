@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { } from 'react'
 
-const Text = () => {
-  return (
-    <div>Text</div>
-  )
+type TextProps = {
+  as?: any,
+  children: React.ReactNode
+}
+const Text = ({ as, children }: TextProps) => {
+  const Component = as || 'span';
+  return <Component>{children}</Component>;
+
 }
 
 export default Text;
