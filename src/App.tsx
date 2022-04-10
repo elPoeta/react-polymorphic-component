@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from './components';
+import { Text, Emphasis } from './components';
 import './App.css';
 
 function App() {
@@ -19,6 +19,10 @@ function App() {
       <br />
       <Text >
         This is a default span tag
+      </Text>
+      <br />
+      <Text as={Emphasis}>
+        This is an Emphasis Component element
       </Text>
     </div>
   );
