@@ -1,13 +1,19 @@
-import React, { } from 'react'
+import React from 'react'
+
+type Color = 'black' | 'white' | 'red' | 'blue' | 'yellow' | 'green' | 'purple' | 'orange';
 
 type TextProps<C extends React.ElementType> = {
   as?: C;
-  children: React.ReactNode;
-} & React.ComponentPropsWithoutRef<C>
+  color?: Color | 'black';
+};
 
-const Text = <C extends React.ElementType = 'span'>({ as, children, ...rest }: TextProps<C>) => {
+type Props<C extends React.ElementType> = React.PropsWithChildren<TextProps<C>> & Omit<React.ComponentPropsWithoutRef<C>, keyof TextProps<C>>
+
+const Text = <C extends React.ElementType = 'span'>({ as, color, style, children, ...rest }: Props<C>) => {
   const Component = as || 'span';
-  return <Component {...rest}>{children}</Component>;
+  const customStyle: React.StyleHTMLAttributes<unknown> = { style } || { style: {} };
+  const composeStyle: React.StyleHTMLAttributes<unknown> = color ? { style: { ...customStyle.style, color } } : customStyle;
+  return <Component {...rest} {...composeStyle}>{children}</Component>;
 
 }
 
