@@ -5,11 +5,11 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Text as="h1">
+      <Text as="h1" color='green' style={{ fontSize: '80px' }}>
         This is a h1 tag
       </Text>
 
-      <Text as="p">
+      <Text as="p" color='orange'>
         This is a p tag
       </Text>
 
