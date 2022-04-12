@@ -1,2 +1,2 @@
-export { default as Text } from "./Text";
-export { default as Emphasis } from "./Emphasis"
+export * from "./Text";
+export * from "./Emphasis"
