@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Text, Emphasis } from './components';
 import './App.css';
 
 function App() {
+  const ref = useRef<HTMLHeadingElement | null>(null);
   return (
     <div className="App">
-      <Text as="h1" color='green' style={{ fontSize: '80px' }}>
+      <Text as="h1" color='green' ref={ref} style={{ fontSize: '80px' }}>
         This is a h1 tag
       </Text>
 
