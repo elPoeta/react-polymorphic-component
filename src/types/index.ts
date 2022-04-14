@@ -1,1 +1,2 @@
-export * from './PolymorphicComponent'; 
+export * from './PolymorphicComponent';
+export * from './TextComponent'; 
